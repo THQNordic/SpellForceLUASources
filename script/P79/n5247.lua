@@ -1,0 +1,37 @@
+--function CreateStateMachine(_Type,_PlatformId,_NpcId,_X,_Y)
+--
+--BeginDefinition(_Type,_PlatformId,_NpcId,_X,_Y)
+--
+--
+----OnOneTimeEvent
+----{
+----	Conditions = {
+----	},
+----	Actions = {
+----		SetNoFightFlagTrue{NpcId = 2916},				
+----	},
+----}
+----
+----OnOneTimeEvent
+----{
+----	Conditions = {
+----	},
+----	Actions = {
+----		ChangeRace {NpcId = self, Race = 150},
+----		SetNoFightFlagFalse{NpcId = 2916},				
+----	},
+----}
+----
+----OnOneTimeEvent
+----{
+----	Conditions = {
+----		FigureAlive{NpcId = Avatar},
+----	},
+----	Actions = {
+----		AttackTarget{Target = Avatar, NpcId = self, FriendlyFire = TRUE},
+----	},
+----}
+--
+--EndDefinition()
+--
+--end

@@ -1,0 +1,13 @@
+function CreateStateMachine(_Type,_PlatformId,_NpcId,_X,_Y)
+
+BeginDefinition(_Type,_PlatformId,_NpcId,_X,_Y)
+
+--!EDS RESPAWN BEGIN
+Respawn{WaitTime=360, Chief = {1780} }
+--!EDS RESPAWN END
+
+OnIdleGoHome{X = 275, Y = 175, Direction = South}
+
+EndDefinition()
+
+end

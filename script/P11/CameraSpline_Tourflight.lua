@@ -1,0 +1,30 @@
+-- Motion Spline Script:
+
+--<Preparing>----------------------------------------------------------------------------------------------------------
+   Camera:MotionSpline_Reset()
+   Camera:MotionSpline_SetBehaviour( 0 )
+--<Setup Spline>-------------------------------------------------------------------------------------------------------
+   Camera:MotionSpline_AddSplinePoint( 298.307281 , 106.628632 , 28.896690 )
+   Camera:MotionSpline_AddSplinePoint( 332.774506 , 186.309280 , 44.796501 )
+   Camera:MotionSpline_AddSplinePoint( 340.386200 , 246.509094 , 48.219673 )
+   Camera:MotionSpline_AddSplinePoint( 408.513550 , 302.483154 , 35.346497 )
+   Camera:MotionSpline_AddSplinePoint( 483.430573 , 308.490448 , 36.136642 )
+   Camera:MotionSpline_AddSplinePoint( 492.253326 , 457.592987 , 66.189682 )
+   Camera:MotionSpline_AddSplinePoint( 459.003296 , 552.460754 , 48.036499 )
+   Camera:MotionSpline_AddSplinePoint( 330.481201 , 465.099487 , 44.166508 )
+   Camera:MotionSpline_AddSplinePoint( 245.875183 , 353.721069 , 54.046501 )
+   Camera:MotionSpline_AddSplinePoint( 210.198807 , 311.962494 , 31.526693 )
+   Camera:MotionSpline_AddSplinePoint( 261.761719 , 259.692932 , 27.526718 )
+   Camera:MotionSpline_AddSplinePoint( 323.528503 , 244.728912 , 42.816498 )
+   Camera:MotionSpline_AddSplinePoint( 312.149414 , 167.273560 , 27.526695 )
+   Camera:MotionSpline_AddSplinePoint( 315.734741 , 74.059586 , 32.386692 )
+   Camera:MotionSpline_AddSplinePoint( 326.129669 , 45.497044 , 36.216690 )
+   Camera:MotionSpline_AddSplinePoint( 343.253479 , 87.528831 , 31.846693 )
+   Camera:MotionSpline_AddSplinePoint( 365.672333 , 120.563240 , 34.027023 )
+   Camera:MotionSpline_AddSplinePoint( 392.708435 , 180.009293 , 29.606689 )
+   Camera:MotionSpline_AddSplinePoint( 359.742767 , 175.864243 , 50.593227 )
+   Camera:MotionSpline_AddSplinePoint( 297.300964 , 94.504890 , 31.883232 )
+--<Setup Cursor>-------------------------------------------------------------------------------------------------------
+   Camera:MotionSpline_SetMovementLength( 45.000000 )
+   Camera:MotionSpline_SetCorrection( 131.684189 )
+   Camera:MotionSpline_SetSlowDown( 0.000000 )

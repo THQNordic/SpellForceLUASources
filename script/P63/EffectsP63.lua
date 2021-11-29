@@ -1,0 +1,56 @@
+
+Fackelfeuer
+{
+	Bruecke1 = { X = 71, Y = 151 },
+	Bruecke2 = { X = 71, Y = 145 },
+	Bruecke3 = { X = 101, Y = 144 },
+	Bruecke4 = { X = 101, Y = 152 },
+	Dorf1 = { X = 299, Y = 219 },
+	Dorf2 = { X = 305, Y = 219 },
+	Dorf3 = { X = 297, Y = 231 },
+	Dorf4 = { X = 295, Y = 243 },
+	Dorf5 = { X = 301, Y = 252 },
+	Dorf6 = { X = 297, Y = 268 },
+	Dorf7 = { X = 303, Y = 268 },
+	Stadt1 = { X = 391, Y = 246 },
+	Stadt2 = { X = 391, Y = 234 },
+	Stadt3 = { X = 415, Y = 276 },
+	Stadt4 = { X = 421, Y = 276 },
+	Stadt5 = { X = 411, Y = 293 },
+	Stadt6 = { X = 426, Y = 294 },
+	Stadt7 = { X = 402, Y = 259 },
+	Stadt8 = { X = 427, Y = 212 },
+	Stadt9 = { X = 422, Y = 212 },
+	Stadt10 = { X = 417, Y = 212 },
+	Stadt11 = { X = 408, Y = 184 },
+	Stadt12 = { X = 408, Y = 178 },
+	Stadt13 = { X = 424, Y = 184 },
+	Stadt14 = { X = 424, Y = 177 },
+	Stadt15 = { X = 418, Y = 225 },
+	Stadt16 = { X = 428, Y = 225 },
+	Stadt17 = { X = 423, Y = 239 },
+	Stadt18 = { X = 423, Y = 243 },
+	Stadt19 = { X = 435, Y = 259 },
+	Stadt20 = { X = 429, Y = 259 },
+	Stadt21 = { X = 446, Y = 285 },
+	Stadt22 = { X = 446, Y = 289 },
+	Stadt23 = { X = 447, Y = 311 },
+	Stadt24 = { X = 452, Y = 306 },
+	Stadt25 = { X = 409, Y = 218 },
+	Stadt26 = { X = 439, Y = 218 },
+	Stadt27 = { X = 406, Y = 168 },
+	Stadt28 = { X = 436, Y = 168 },
+	Stadt29 = { X = 410, Y = 205 },
+	Stadt30 = { X = 410, Y = 201 },
+	Stadt31 = { X = 402, Y = 269 },
+	Stadt32 = { X = 436, Y = 168 },	
+}   
+
+
+Lagerfeuer
+{
+	orcfeuer = { X = 175, Y = 161 },
+	gobbofeuer = { X = 191, Y = 167 },
+	imlagerfeuer = { X = 195, Y = 153 },
+
+}   

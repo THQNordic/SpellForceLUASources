@@ -1,0 +1,1 @@
+dofile("script/p104/Garnisonstruppen.lua")

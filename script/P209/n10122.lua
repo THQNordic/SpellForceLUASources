@@ -1,0 +1,1 @@
+dofile("script/P209/n10117_Skeletons_West.lua")

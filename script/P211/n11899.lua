@@ -1,0 +1,9 @@
+function CreateStateMachine(_Type,_PlatformId,_NpcId,_X,_Y)
+
+BeginDefinition(_Type,_PlatformId,_NpcId,_X,_Y)
+
+KillOnDominate{NpcId = self}
+
+EndDefinition()
+
+end

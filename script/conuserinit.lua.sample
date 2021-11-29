@@ -1,0 +1,29 @@
+-- datei: \redist\script\conuserinit.lua
+
+-- movie bei bugs möglichst immer mitschicken
+-- wenn kein dateiname angegeben, dann liegt die datei im spellforce ordner (unter eigene dateien)
+-- als movie.pmv
+Play = 1
+Record = 2
+
+-- zum abspielen auf Play umstellen
+Setup:SetMovieParams("", Record)
+
+
+-- init function, hier kann alles rein was man auch
+-- in der konsole (+) eintippen kann
+function ConGameMenuUserStart()
+	-- man kann nicht sterben (avatar behält immer 1 hp)
+--	Application:SetGodMode(1)
+	
+	-- unexplored abschalten
+--	UnExplored:Activate(0)
+	
+	-- gibt von jeder ressource 200, kann mehrfach ausgeführt werden
+--	Application:GiveMeGoods()
+--	Application:GiveMeGoods()
+
+	-- avatar verbraucht beim casten kein mana
+--	Application:SetNoManaUsage(1)	
+end
+

@@ -1,0 +1,46 @@
+--function CreateStateMachine(_Type,_PlatformId,_NpcId,_X,_Y)
+--BeginDefinition(_Type,_PlatformId,_NpcId,_X,_Y)
+--
+--OnOneTimeEvent
+--{
+--	Conditions = {
+--	},
+--	Actions = {
+--		SetGlobalTimeStamp{Name = "timer"},
+--	},
+--}
+--
+--OnOneTimeEvent
+--{
+--	Conditions = {
+--		IsGlobalTimeElapsed{Name = "timer", Seconds = 8, UpdateInterval = 2},
+--	},
+--	Actions = {
+--		Outcry {NpcId = 4463, String = "Der Weg ist frei! Ich hole meine Männer!", Tag = "oca2jenquaiP211_005", Delay = TRUE, Color = ColorWhite},
+--		Outcry {NpcId = 4463, String = "Da ist Verstärkung!" , Tag = "oca2jenquaiP211_006" , Delay = TRUE , Color = ColorWhite},
+--		--SetNpcFlagTrue{Name = "Despawn"},
+--	},
+--}
+--
+--OnOneTimeEvent
+--{
+--	Conditions = {
+--		IsGlobalTimeElapsed{Name = "timer", Seconds = 9, UpdateInterval = 2},
+--	},
+--	Actions = {
+--		Outcry {NpcId = 4463, String = "Der Weg ist frei! Ich hole meine Männer!", Tag = "oca2jenquaiP211_005", Delay = TRUE, Color = ColorWhite},
+--		Outcry {NpcId = 4463, String = "Da ist Verstärkung!" , Tag = "oca2jenquaiP211_006" , Delay = TRUE , Color = ColorWhite},
+--		SetNpcFlagTrue{Name = "Despawn"},
+--	},
+--}
+--
+--Despawn
+--{
+--	PlayDeathAnim = TRUE,
+--	Conditions = {
+--		IsNpcFlagTrue{Name = "Despawn", UpdateInterval = 1},
+--	},
+--}
+--
+--EndDefinition()
+--end

@@ -1,0 +1,56 @@
+--function CreateStateMachine(_Type,_PlatformId,_NpcId,_X,_Y)
+--BeginDefinition(_Type,_PlatformId,_NpcId,_X,_Y)
+--
+--OnWakeUpEvent
+--{
+--	SleepConditions = {
+--	},
+--	SleepActions = {
+--		ChangeRace{Race = 150},
+--	},
+--	WakeUpConditions = {
+--		IsGlobalFlagTrue{Name = "WakeUp"},
+--	},
+--	WakeUpActions = {
+--	},
+--}
+--
+--
+--Respawn{WaitTime = 5}
+--
+--DebugInitAction( SetNpcTimeStamp{Name = "change"} )
+--
+--for i = 1, 9 do
+--	OnOneTimeEvent
+--	{
+--		Conditions = {
+--			IsNpcTimeElapsed{Name = "change", Seconds = 8 * i, UpdateInterval = 2},
+--		},
+--		Actions = {
+--			ChangeUnit{NpcId = self , Unit = 846},
+--			ChangeRace{Race = 3 , NpcId = self},
+--		},
+--	}
+--	OnOneTimeEvent
+--	{
+--		Conditions = {
+--			IsNpcTimeElapsed{Name = "change", Seconds = 8 * i + 4, UpdateInterval = 2},
+--		},
+--		Actions = {
+--			ChangeUnit{NpcId = self , Unit = 747},
+--			ChangeRace{Race = 134, NpcId = self}
+--		},
+--	}
+--	OnOneTimeEvent
+--	{
+--		Conditions = {
+--			IsNpcTimeElapsed{Name = "change", Seconds = 8 * i + 5, UpdateInterval = 2},
+--		},
+--		Actions = {
+--			CGdsFigureSetHealth:new(_NpcId, 69 - (10*i)),
+--		},
+--	}
+--end
+--
+--EndDefinition()
+--end

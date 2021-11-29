@@ -1,0 +1,1 @@
+dofile("script/p207/n11632_Weg_Zur_Dritten_Festung_Truppe01_Truppe.lua")

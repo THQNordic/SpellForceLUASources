@@ -1,0 +1,193 @@
+-- this dofile has to be called, because the names and helper functions are defined here
+dofile("script/AiHelper.lua")
+
+-- general comments
+-- the clan for which the goal is meant has to be given by Clan_#
+-- this file is read every time a goal is initialized, i.e. every time a clan is made or a goal is changed
+-- the order is unimportant, but the names have to be exact and the case has to match
+
+-- The values given in this sample may not be meaningful, if you need guidlines look at the default value, if given
+
+-- the nomadic goal
+-- make groups (groupsize maxsize from db) and roams the given range
+-- Nie! Nie !! Nie !!! Mit Rts Spawn füllen, da max Size hier von Code Seite = 30
+Clan_3 =
+{
+	Goal = Nomadic,
+	NomadicRange = {x1 = 99, y1 = 111, x2 = 125, y2 = 40},
+}
+
+-- the script goal
+-- script induced goto, parameters also given in script
+Clan_2 =
+{
+	Goal = Script,
+}
+
+-- the agressive goal 
+-- send scout groups in every quadrant, find and attack given enemy (doesn't need to be player), 
+-- the minimum number of scout groups is 4
+-- attack if : monument claimed by player and alarmed (i.e. enemy was found or AttackWaitTime up) 
+-- all timer start, when the player claims the monument
+
+Clan_1 =
+{
+	Goal = Agressive,
+
+	-- gives number of NPC which stay at the HomePoint to "defend" it
+	-- default : 0
+	MinimalHomePointCrew = 5,	
+	
+	-- when number of NPC reach this limit an attack is guaranteed
+	-- cannot be 0
+	-- default : 1
+	MaximalHomePointCrew = 1,
+
+	-- after the first scout  group is on its way, this is the standba for an attack
+	-- default : 0
+	StandbyCrew = 0,
+
+	-- because the scout groups operate in quadrants it is best to have 4 of them, to archive this  
+	-- more than MinimalHomePointCrew + 4* ScoutGroupSize NPC should be available
+	-- default : 0
+	ScoutGroupSize = 2,
+
+	-- for a big or complicated map it may be advisable to have more than 4 scout groups, the maximal number can be given here
+	-- at the moment only the MinimalHomPointCrew parameter is taken into consideration, so if you want an attack group
+	-- Total NPC >= (MaximalNumberScoutGroups * ScoutGroupSize) + MinimalHomePointCrew + AttackGroupSize
+	-- NEW : NUMBERS SMALLER THAN 4 WILL BE AUTOMATICALLY SET TOO 4
+	-- default : 4
+	MaximalNumberScoutGroups = 6,
+
+	-- number of NPC to attak the enemy
+	-- default : 5
+	AttackGroupSize = 10,
+
+	-- player should be given like that, because the player clan number may change, every other clan by number	
+	-- default : player
+	Enemy = {Clan = Player},
+
+	-- this is the point where scouts return to alarm the clan, this should also be the point where most of the clan members are,
+	-- and where the HomePointCrew will be 
+	-- please verify that the point is indeed reachable and on the map, this point HAS TO BE GIVEN 
+	-- default : middle of world 
+	HomePoint = {x = 271, y = 247}, 
+	
+	-- this is the scouting and attacking range
+	-- at the moment this has to be considered (this will be made easier as soon as possible)
+	-- at the moment only one value can be given, it should be a multiplier of 32, if not the 32-multiplier smaller than it will be used
+	-- the scouting region is an quadrat with the homepoint as the middle point
+	-- if no range is given the whole map will be taken, in this case the homepoint does not have to be in the middle
+	Range = 64,
+	
+	-- all the times in seconds, the effective time depends on the number of gd steps per second, which can be less than 10
+	-- the given values are the default values
+	
+	-- time a scout waits after he has seen the player or a player owned NPC
+	AlarmedWaitTime = 60, 
+	
+	-- time a clan waits for its scouts, after this time the clan is alarmed and tries to attack
+	-- a player building or the densest tile of player owned figures (NPC/avatar)
+	AttackWaitTime = 600,
+	
+	-- after this time the next attack group is going forward (only if enough clan members)
+	AttackFrequency = 300,
+}	
+
+-- the defensive goal
+-- make lookouts, lookouts can get the main army from the camp and attack the position they saw the enemy or attack the enemy themselves (Fight parameter in Lookout)
+-- attack if : lookout alarmes (attack even if monument not claimed) or monument claimed by player and alarmed (i.e. AttackWaitTime up)
+-- all timer start, when the player claims the monument
+
+
+Clan_4 =
+{
+	Goal = Defensive,
+	
+-- new
+	
+	-- really not implemented , do we need this ?
+	-- Range = {x1 = 0, y1 = 0, x2 = 0, y2 = 0},
+
+	-- intervall at which lookout posts are updated, i.e. new people send there (walking)
+	UpdateWaitTime = 60,
+
+	-- Lookout tables
+	-- maximal number of lookouts = 10
+	-- they are filled top down	
+	Lookout = 
+	{
+		-- name, i.e. Lookout1 is not important, but cannot be a pure number
+		-- Coordinates for the lookout, size of the lookout, units to send to the lookout, only NPC with this UnitId are send
+		-- Fight, can be left out, Fight = 0 or no parameter means go fetch the camp, Fight = 1 Lookout rushes to attack
+		-- Spread, area used for FindFreeWalkField and beaming, default = 5
+		Lookout1 = {x = 335, y = 203, Groupsize = 2, UnitId = 784, Spread = 5, Fight = 0},
+		Lookout2 = {x = 340, y = 245, Groupsize = 2, UnitId = 784, Spread = 2},
+	},
+	
+	-- waittime until the clan attacks anyway (should probably be realy high, else the sense of lookout points is lost)
+	-- default : 1800 
+	FirstAttackWaitTime = 1800,
+
+-- as in agressive
+
+	-- gives number of NPC which stay at the HomePoint to "defend" it
+	-- default : 0
+	MinimalHomePointCrew = 5,	
+	
+
+	-- number of NPC to attak the enemy
+	-- default : 5
+	AttackGroupSize = 10,
+
+	-- player should be given like that, because the player clan number may change, every other clan by number	
+	-- default : player
+	Enemy = {Clan = Player},
+
+	-- this is the point where scouts return to alarm the clan, this should also be the point where most of the clan members are,
+	-- and where the HomePointCrew will be 
+	-- please verify that the point is indeed reachable and on the map, this point HAS TO BE GIVEN 
+	-- default : middle of world 
+	HomePoint = {x = 271, y = 247}, 
+	
+	-- this is the scouting and attacking range
+	-- at the moment this has to be considered (this will be made easier as soon as possible)
+	-- at the moment only one value can be given, it should be a multiplier of 32, if not the 32-multiplier smaller than it will be used
+	-- the scouting region is an quadrat with the homepoint as the middle point
+	-- if no range is given the whole map will be taken, in this case the homepoint does not have to be in the middle
+	Range = 64,
+	
+	-- all the times in seconds, the effective time depends on the number of gd steps per second, which can be less than 10
+	-- the given values are the default values
+	
+	-- time a lookout waits after he has seen the player or a player owned NPC to go home
+	-- because lookouts attack this parameter is not as important
+	AlarmedWaitTime = 60, 
+	
+	-- after this time the next attack group is going forward (only if enough clan members)
+	AttackFrequency = 300,	
+	
+}
+
+-- NEW other possibility to define Parameters
+
+DefaultAgressive = 
+{
+	Goal = Agressive,
+	MinimalHomePointCrew = 1,
+	ScoutGroupSize = 1,
+	MaximalNumberScoutGroups = 4,
+	AttackGroupSize = 1,
+	Enemy = {Clan = Player},
+	AttackWaitTime = Minutes(5),
+}
+
+Clan_1 = tcopy(DefaultAgressive)
+Clan_1["HomePoint"] = {x = 288, y = 330}
+
+Clan_2 = tcopy(DefaultAgressive)
+Clan_2["HomePoint"] = {x = 155, y = 130}
+
+-- NEW 2 new functions in AiHelper.lua
+-- Minutes() converts minutes to seconds
+-- Hours() converts hours to seconds

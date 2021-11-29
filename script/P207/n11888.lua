@@ -1,0 +1,1 @@
+dofile("script/p207/n11252_Cutscene_Beginning_Dummies_Spawn.lua")

@@ -1,0 +1,1 @@
+dofile("script/p202/n9130_Massenspawn.lua")

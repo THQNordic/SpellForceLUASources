@@ -1,0 +1,1 @@
+dofile("script/p105/n7105_ElfenTrupp.lua")

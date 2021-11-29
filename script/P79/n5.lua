@@ -1,0 +1,29 @@
+--function CreateStateMachine(_Type,_PlatformId,_NpcId,_X,_Y)
+--
+--BeginDefinition(_Type,_PlatformId,_NpcId,_X,_Y)
+----OnToggleEvent 
+----{
+----	UpdateInterval = 2,
+----	OnConditions =
+----	{
+----		IsGlobalFlagTrue{Name = "toggle-o-rama", UpdateInterval = 2},
+----	},
+----	OnActions	=
+----	{
+----		IncreaseGlobalCounter{Name = "count_to_4"},
+----		IncreaseGlobalCounter{Name = "ON_ACTIONS_COUNTER"},
+----	},
+----	OffConditions =
+----	{
+----		IsGlobalFlagFalse{Name = "toggle-o-rama", UpdateInterval = 2},
+----	},
+----	OffActions	=
+----	{
+----		DecreaseGlobalCounter {Name = "count_to_4"},
+----		IncreaseGlobalCounter{Name = "OFF_ACTIONS_COUNTER"},
+----	}
+----}
+--
+--EndDefinition()
+--
+--end

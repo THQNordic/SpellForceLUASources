@@ -1,0 +1,130 @@
+
+
+--Chief Patrouille1
+
+dofile("script/p113/n6604_Patrouille1.lua")
+
+----Nach erstem IdleGoHome reset Truppencounter
+--OnOneTimeEvent
+--{
+--	NotInDialog = FALSE , UpdateInterval = 60 ,
+--	Conditions = 
+--	{ 
+--		IsGlobalFlagTrue{Name = "P113ChiefPatrol1ResetAnfang", UpdateInterval = 30},
+--	},
+--	Actions = 
+--	{
+--		ResetGlobalCounter{Name = "P113CTruppePatrol1"},
+--	}
+--}
+-- 
+-- 
+-- -- Nach jedem Idle Point Basepoint Counter +1 und Truppencounter reset
+--OnEvent
+--{
+--	NotInDialog = FALSE ,
+--	Conditions =
+--	{
+--		IsGlobalFlagTrue{Name = "P113ChiefPatrol1Increase", UpdateInterval = 60},
+--		IsGlobalCounter{Name = "P113CTruppePatrol1", Value = 9, Operator = IsGreaterOrEqual, UpdateInterval = 30},
+--		
+--	},
+--	Actions = 
+--	{  
+--		SetGlobalFlagFalse{Name = "P113ChiefPatrol1Increase"},
+--		IncreaseGlobalCounter{Name = "P113CBasePatrol1", Step = 1},
+--		SetEffect{Effect = "IcePack",  Length = 300 , TargetType = Figure , NpcId = self},
+--		ResetGlobalCounter{Name = "P113CTruppePatrol3"},
+--		SetEffect{Effect = "Lightning",  Length = 100 , TargetType = Figure , NpcId = self},
+--	}
+--}
+--
+----Am Ende der Schleife BasepointCounter auf null
+--OnEvent
+--{
+--	NotInDialog = FALSE ,
+--	Conditions =
+--	{
+--		IsGlobalFlagTrue{Name = "P113ChiefPatrol1Ende", UpdateInterval = 60},
+--		
+--	},
+--	Actions = 
+--	{  
+--		ResetGlobalCounter{Name = "P113CBasePatrol1"},
+--		SetGlobalFlagFalse{Name = "P113ChiefPatrol1Ende"},
+--	}
+--}
+--
+----basepoint1
+--OnIdleGoHome
+--{
+--	X = 359, Y = 200, Direction = 5, Range = 1 , WalkRange = 10 , WaitTime = 0 , WalkMode = Walk , GotoMode = GotoNormal,
+--	Conditions = 
+--	{  
+--		IsGlobalCounter{Name = "P113CBasePatrol1", Value = 0, Operator = IsEqual, UpdateInterval = 30},
+--		--IsGlobalCounter{Name = "P113CTruppePatrol1", Value = 9, Operator = IsEqual, UpdateInterval = 30},
+--	},
+--	Actions = 
+--	{
+--		SetGlobalFlagTrue{Name = "P113ChiefPatrol1ResetAnfang"},
+--	},
+--
+--	HomeActions = 
+--	{
+--		SetGlobalFlagTrue{Name = "P113ChiefPatrol1Increase"},
+--		
+--	}
+--}
+--
+--
+----basepoint2
+--OnIdleGoHome
+--{
+--	X = 130, Y = 142, Direction = 3, Range = 1 , WalkRange = 10 , WaitTime = 0 , WalkMode = Walk , GotoMode = GotoNormal,
+--	Conditions = 
+--	{ 
+--		IsGlobalCounter{Name = "P113CBasePatrol1", Value = 1, Operator = IsEqual, UpdateInterval = 30},
+--		--IsGlobalCounter{Name = "P113CTruppePatrol1", Value = 9, Operator = IsEqual, UpdateInterval = 30},
+--	},
+--	Actions = 
+--	{},
+--	HomeActions = 
+--	{
+--		SetGlobalFlagTrue{Name = "P113ChiefPatrol1Increase"},
+--	}
+--}
+--
+----basepoint3
+--OnIdleGoHome
+--{
+--	X = 219, Y = 253, Direction = 3, Range = 1 , WalkRange = 10 , WaitTime = 0 , WalkMode = Walk , GotoMode = GotoNormal,
+--	Conditions = 
+--	{
+--		IsGlobalCounter{Name = "P113CBasePatrol1", Value = 2, Operator = IsEqual, UpdateInterval = 30},
+--		--IsGlobalCounter{Name = "P113CTruppePatrol1", Value = 9, Operator = IsEqual, UpdateInterval = 30},
+--	},
+--	Actions = 
+--	{},
+--	HomeActions = 
+--	{
+--		SetGlobalFlagTrue{Name = "P113ChiefPatrol1Ende"},
+--		
+--	}
+--}
+--
+--
+--
+--Respawn
+--{
+--	WaitTime = 30, UnitId = self , Clan = 0 , Target = none , X = startX , Y = startY , Chief = none, NoSpawnEffect = FALSE , 
+--	Conditions = 
+--	{
+--		QuestState{QuestId = 622, State = StateActive, UpdateInterval = 30},
+--	} , 
+--	Actions = { } , 
+--	DeathActions = { }, 
+--
+--}
+
+
+

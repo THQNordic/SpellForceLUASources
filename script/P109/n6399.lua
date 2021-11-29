@@ -1,0 +1,1 @@
+dofile("script/p109/n6396_ZwergenTrupp.lua")

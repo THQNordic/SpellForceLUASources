@@ -1,0 +1,16 @@
+--function CreateStateMachine(_Type,_PlatformId,_NpcId,_X,_Y)
+--
+--BeginDefinition(_Type,_PlatformId,_NpcId,_X,_Y)
+--
+--OneTimeInitAction( ChangeRace{Race = 152} )
+--OneTimeInitAction( SetGlobalTimeStamp{Name = "attack"} )
+--
+--OnPlatformOneTimeEvent
+--{
+--	Conditions = { IsGlobalTimeElapsed{Name = "attack", Seconds = 5} },
+--	Actions = { AttackTarget{Target = 10499, NpcId = 10500, FriendlyFire = TRUE} }
+--}
+--
+--EndDefinition()
+--
+--end

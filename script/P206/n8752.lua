@@ -1,0 +1,1 @@
+dofile("script/p206/n8752_ErsteTrokanTruppeAnfuehrer.lua")

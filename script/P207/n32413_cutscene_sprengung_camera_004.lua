@@ -1,0 +1,14 @@
+-- Motion Spline Script:
+
+--<Preparing>----------------------------------------------------------------------------------------------------------
+   Camera:MotionSpline_Reset()
+   Camera:MotionSpline_SetBehaviour( 0 )
+--<Setup Spline>-------------------------------------------------------------------------------------------------------
+   Camera:MotionSpline_AddSplinePoint( 533.218811 , 424.627136 , 69.945412 , 0.000000 , [[Camera:ScriptSplineLookAtPosition(539.111,421.527,65.500);]] )
+   Camera:MotionSpline_AddSplinePoint( 533.222168 , 424.626251 , 69.948517 , 0.000000 , [[]] )
+   Camera:MotionSpline_AddSplinePoint( 533.222168 , 424.626251 , 69.948563 , 0.000000 , [[]] )
+   Camera:MotionSpline_AddSplinePoint( 533.222168 , 424.626251 , 69.948563 , 0.000000 , [[]] )
+--<Setup Cursor>-------------------------------------------------------------------------------------------------------
+   Camera:MotionSpline_SetMovementLength( 10.000000 )
+   Camera:MotionSpline_SetCorrection( 0.000000 )
+   Camera:MotionSpline_SetSlowDown( 0.000000 )

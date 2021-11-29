@@ -1,0 +1,182 @@
+function CreateStateMachine(_Type,_PlatformId,_NpcId,_X,_Y)
+
+BeginDefinition(_Type,_PlatformId,_NpcId,_X,_Y)
+
+--OneTimeInitAction( SetGlobalFlagTrue{Name = "toggle-o-rama"} )
+
+--WatchGlobalFlag("toggle-o-rama")
+--WatchGlobalFlag("toggle-o-rama2")
+
+--WatchGlobalCounter("TESTCOUNTER")
+--WatchGlobalCounter("NUMBER_OF_EVENTS_EXECUTED_TWICE")
+
+
+--OnToggleEvent 
+--{
+--	UpdateInterval = 10,
+--	OnConditions =
+--	{
+--	},
+--	OnActions	=
+--	{
+--	},
+--	OffConditions =
+--	{
+--	},
+--	OffActions	=
+--	{
+--	}
+--}
+--
+--OnToggleEvent 
+--{
+--	UpdateInterval = 15,
+--	OnConditions =
+--	{
+--	},
+--	OnActions	=
+--	{
+--	},
+--	OffConditions =
+--	{
+--	},
+--	OffActions	=
+--	{
+--	}
+--}
+--
+--OnEvent
+--{
+--	Conditions = {
+--		IsGlobalCounter{Name = "TESTCOUNTER", Operator = IsEqual, Value = 0, UpdateInterval = 15},
+--	},
+--	Actions = {
+--		IncreaseGlobalCounter{Name = "TESTCOUNTER"},
+--		IncreaseGlobalCounter{Name = "TESTCOUNTER == 0"},
+--	},
+--}
+--
+--
+--OnEvent
+--{
+--	Conditions = {
+--		IsGlobalCounter{Name = "TESTCOUNTER", Operator = IsGreater, Value = 1, UpdateInterval = 1},
+--	},
+--	Actions = {
+--		ResetGlobalCounter{Name = "TESTCOUNTER"},
+--		StopEffect{NpcId = Avatar},
+--		SetEffect{NpcId = Avatar, Effect = "Spawnboss", Length = 300},
+--		IncreaseGlobalCounter{Name = "NUMBER_OF_EVENTS_EXECUTED_TWICE"},
+--		IncreaseGlobalCounter{Name = "TESTCOUNTER >= 2"},
+--	},
+--}
+--
+--OnEvent
+--{
+--	Conditions = {
+--		IsGlobalCounter{Name = "TESTCOUNTER", Operator = IsEqual, Value = 1, UpdateInterval = 15},
+--	},
+--	Actions = {
+--		DecreaseGlobalCounter{Name = "TESTCOUNTER"},
+--		IncreaseGlobalCounter{Name = "TESTCOUNTER == 1"},
+--	},
+--}
+--
+--OnEvent
+--{
+--	Conditions = {
+--		IsGlobalCounter{Name = "TESTCOUNTER", Operator = IsLess, Value = 0, UpdateInterval = 1},
+--	},
+--	Actions = {
+--		ResetGlobalCounter{Name = "TESTCOUNTER"},
+--		StopEffect{NpcId = Avatar},
+--		SetEffect{NpcId = Avatar, Effect = "Inflex", Length = 300},
+--		IncreaseGlobalCounter{Name = "NUMBER_OF_EVENTS_EXECUTED_TWICE"},
+--		IncreaseGlobalCounter{Name = "TESTCOUNTER < 0"},
+--	},
+--}
+--
+
+
+--OnEvent
+--{
+--	Conditions = {
+--		IsGlobalCounter{Name = "count_to_4", Value = 4, Operator = IsEqual, UpdateInterval = 2},
+--		IsGlobalFlagTrue{Name = "toggle-o-rama", UpdateInterval = 2},
+--	},
+--	Actions = {
+--		SetEffect{NpcId = Avatar, Effect = "Lightning", Length = 500},
+--		SetGlobalFlagFalse{Name = "toggle-o-rama"},
+--	},
+--}
+--
+--OnEvent
+--{
+--	Conditions = {
+--		IsGlobalCounter{Name = "count_to_4", Value = 0, Operator = IsEqual, UpdateInterval = 2},
+--		IsGlobalFlagFalse{Name = "toggle-o-rama", UpdateInterval = 2},
+--	},
+--	Actions = {
+--		SetEffect{NpcId = Avatar, Effect = "Spawnboss", Length = 500},
+--		SetGlobalFlagTrue{Name = "toggle-o-rama"},
+--	},
+--}
+--
+--
+--OnToggleEvent 
+--{
+--	UpdateInterval = 2,
+--	OnConditions =
+--	{
+--		IsGlobalFlagTrue{Name = "toggle-o-rama", UpdateInterval = 2},
+--	},
+--	OnActions	=
+--	{
+--		IncreaseGlobalCounter{Name = "count_to_4"},
+--		IncreaseGlobalCounter{Name = "ON_ACTIONS_COUNTER"},
+--	},
+--	OffConditions =
+--	{
+--		IsGlobalFlagFalse{Name = "toggle-o-rama", UpdateInterval = 2},
+--	},
+--	OffActions	=
+--	{
+--		DecreaseGlobalCounter {Name = "count_to_4"},
+--		IncreaseGlobalCounter{Name = "OFF_ACTIONS_COUNTER"},
+--	}
+--}
+
+--BeginScript
+--{
+--	Conditions = {
+--		IsGlobalFlagTrue{Name = "Go"},
+--	},
+--	Actions = {
+--		SetEffect{NpcId = Avatar, Effect = "Fog", Length = 5000},
+--	},
+--}
+--
+--OnOneTimeEvent
+--{
+--	Conditions = {
+--	},
+--	Actions = {
+--		SetEffect{NpcId = Avatar, Effect = "Lightning", Length = 15000},
+--		ChangeEquipment{Slot = SlotLeftRing, Item = 7292, NpcId = 4462},
+--		ChangeEquipment{Slot = SlotChest, Item = 7305, NpcId = 5247},
+--	},
+--}
+--
+--KillScript
+--{
+--	Conditions = {
+--		IsGlobalFlagFalse{Name = "Go"},
+--	},
+--	Actions = {
+--		SetEffect{NpcId = Avatar, Effect = "AcidCloud", Length = 5000},
+--	},
+--}
+
+EndDefinition()
+
+end
